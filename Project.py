@@ -1,4 +1,7 @@
 from tkinter import *
+from sqlite3 import *
+
+connection = sqlite3.connect("aquarium.db")
 
 root = Tk()
 

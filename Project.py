@@ -1,7 +1,9 @@
-from tkinter import * 
+from tkinter import *
+from sklearn import *
 
 root = Tk()
 
+Tree = tree.DecisionTreeClassifier
 fname = input('What is your first name? ')
 lname = input('What is your first name? ')
 age = input('What is your first name? ')
@@ -47,4 +49,5 @@ if covtest =0:
 	if covtest2 = 0:
 		print('Get tested immediately!')
 	else:
-		print('You should probably get tested!')
+		print('You should probably get tested for coronavirus!')
+

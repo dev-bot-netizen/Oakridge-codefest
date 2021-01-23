@@ -32,6 +32,7 @@ lname = input('What is your first name? ')
 age = input('What is your first name? ')
 pincode = input('What is your first name? ')
 passw = input('what would you like your password to be? ')
+fullname= fname+lname
 
 covtest = 0
 covtest2 = 0
@@ -113,9 +114,9 @@ if maltest == 0:
 		choltest += 1
 		
 cursor.execute("INSERT INTO corona VALUES (?, ?, ?, 'no', 'no', 'no',  ? )"
-	      (fname+' ' + lname, age, pincode, passw)
+	      (fullname, age, pincode, passw)
 	      )
 
 rows = cursor.execute(
-    "SELECT name, age, pincode, covid state, malayria state, cholera state FROM corona WHERE covid state = 'yes' OR malayria state = 'yes' OR cholera state = 'yes'",
+    "SELECT name, age, pincode, covid state, malayria state, cholera state FROM corona WHERE covid state = 'yes' OR malayria state = 'yes' OR cholera state = 'yes'",													
 ).fetchall()

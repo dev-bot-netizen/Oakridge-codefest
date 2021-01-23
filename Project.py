@@ -1,14 +1,38 @@
 from tkinter import *
 from sqlite3 import *
 
-connection = sqlite3.connect("aquarium.db")
-
 root = Tk()
+connection = sqlite3.connect("covid19")
+cursor = connection.cursor()
+
+cont = input('Do you want to edit an existing profile?(1 for yes, 0 for no) ')
+if cont == 1:
+	fna = input('What is the first name of the profile? ')
+	lna = input('What is the second name of the profile? ')
+	passw = input('What is your password? ')
+	name = fna+lna
+	rows = cursor.execute(
+		"SELECT password FROM corona WHERE password = ?",
+		(pass,),
+	).fetchall()
+	if len(rows<0):
+		virus = input('type covid state to alter your c`ovid state, Malayria state for your malayria state, and Cholera state for your cholera state')
+		newstatus = input(' type yes if you want to update the profile to having the diease and no for the opposite ')
+		cursor.execute(
+			"UPDATE corona SET ? = ? WHERE pssword = ?",
+			(virus, newstatus, passw)
+		)
+	else:
+		print('wrong password')
+
+
 
 fname = input('What is your first name? ')
 lname = input('What is your first name? ')
 age = input('What is your first name? ')
 pincode = input('What is your first name? ')
+passw = input('what would you like your password to be? ')
+
 covtest = 0
 covtest2 = 0
 maltest = 0
@@ -87,3 +111,12 @@ if maltest == 0:
 	nxt = input('Do you experience any of the above?(1 for yes, 0 for no)')
 	if nxt == 0:
 		choltest += 1
+		
+cursor.execute("INSERT INTO corona VALUES (?, ?, ?, 'no', 'no', 'no',  ? )"
+	      (fname+' ' + lname, age, pincode, passw)
+	      )
+
+rows = cursor.execute(
+    "SELECT name, age, pincode, covid state, malayria state, cholera state FROM corona WHERE covid state = 'yes' OR malayria state = 'yes' OR cholera statess",
+).fetchall()
+print(rows)

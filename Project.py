@@ -16,7 +16,7 @@ if cont == 1:
 		(pass,),
 	).fetchall()
 	if len(rows<0):
-		virus = input('type covid state to alter your c`ovid state, Malayria state for your malayria state, and Cholera state for your cholera state')
+		virus = input('type covid state to alter your covid state, Malayria state for your malayria state, and Cholera state for your cholera state')
 		newstatus = input(' type yes if you want to update the profile to having the diease and no for the opposite ')
 		cursor.execute(
 			"UPDATE corona SET ? = ? WHERE pssword = ?",
@@ -117,6 +117,5 @@ cursor.execute("INSERT INTO corona VALUES (?, ?, ?, 'no', 'no', 'no',  ? )"
 	      )
 
 rows = cursor.execute(
-    "SELECT name, age, pincode, covid state, malayria state, cholera state FROM corona WHERE covid state = 'yes' OR malayria state = 'yes' OR cholera statess",
+    "SELECT name, age, pincode, covid state, malayria state, cholera state FROM corona WHERE covid state = 'yes' OR malayria state = 'yes' OR cholera state = 'yes'",
 ).fetchall()
-print(rows)

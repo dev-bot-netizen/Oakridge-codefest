@@ -3,102 +3,155 @@ from sqlite3 import *
 connection = connect("coronavirus")
 cursor = connection.cursor()
 
+final = []
+
 def Pincodealgo(pin):
-    pin = int(pin)
-    region = pin //1000
+    region = pin // 10000
+    trupin = cursor.execute(
+        "SELECT name, Pincode FROM corona"
+    ).fetchall()
+    result = []
+    #print(trupin)
     if region == 11:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-    elif region == 12 and region ==13:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-    elif region >13 and region <17:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
+    elif region == 12 or region ==13:
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
+    elif region >13 or region <17:
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region == 17:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-    elif region == 18 and region == 19:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
+    elif region == 18 or region == 19:
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >19 and region <29:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >29 and region <35:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-    
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >35 and region <40:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )  
-   
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] / 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >39 and region <45:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >44 and region <50:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-    
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >49 and region <54:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-        
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >55 and region <60:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >59 and region <65:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-        
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >66 and region <70:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >69 and region <75:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >74 and region <78:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region == 78:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region == 79:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
     elif region >79 and region <86:
-        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
-        (region),
-                       )
-
+        for entry in trupin:
+            if entry[1] == '':
+                continue
+            if entry[1] // 10000 == region:
+                #print(entry)
+                result.append(entry)
+    return result
+                
 cont = input('Do you want to edit an existing profile?(1 for yes, 0 for no) ')
 if cont =='1':
     fna = input('What is the first name of the profile? ')
     lna = input('What is the second name of the profile? ')
+    pincode = int(input('What is the pincode of the profile? '))
     passw = input('What is your Password? ')
     name = fna+lna
     rows = cursor.execute(
@@ -120,23 +173,38 @@ if cont =='1':
                 (newstatus, passw),
                 )
         elif virus == 'cholera state':
-                cursor.execute(
+            cursor.execute(
                 "UPDATE corona SET 'cholera state' = ? WHERE password == ?",
                 (newstatus, passw),
         )
     else:
         print('wrong Password')
     
+    result = Pincodealgo(pincode)
+    rows = cursor.execute(
+        "SELECT Name, Age, Pincode, 'covid state', 'malayria state', 'cholera state' FROM corona WHERE 'covid state' = 'yes' OR 'malayria state' = 'yes' OR 'cholera state' = 'yes'",                                                   
+    ).fetchall()
+
+    for i in rows:
+        if i in result:
+            final.append(i)
+    if final == []:
+        print("\nNo cases in your region. Yay!")
+    else:
+        print(*final)   
+    connection.commit()
+    
     exit()
 connection.commit()
 
 fname = input('What is your first name? ')
-lname = input('What is your first name? ')
+lname = input('What is your last name? ')
 age = input('What is your age? ')
 pincode = input('What is your pincode? ')
 if len(pincode) != 6:
     print('Invalid pincode')
     exit()
+pincode = int(pincode)
 passw = input('what would you like your Password to be? ')
 fullname= fname+lname
 
@@ -162,7 +230,7 @@ nxt = input('Do you experience any of the above?(1 for yes, 0 for no)')
 if nxt == '0':
     covtest2+=1
 
-temp = input('What is your temperature(Use a thermometer)? ')
+temp = input('What is your temperature ˚F(Use a thermometer)? ')
 Bp = input('What is your diastolic blood pressure(A sphygmomanometer can be used)? ')
 O2 = input('what is your oxygen level(An electronic oxygen measuring device can be used)? ')
 Eg = input('Does you ECG test give you any problems(ECG = electrocardiogram test 0 for yes 1 for no)? ')
@@ -223,7 +291,17 @@ cursor.execute("INSERT INTO corona VALUES (?, ?, ?, 'no', 'no', 'no',  ? )",
           (fullname, age, pincode, passw,),
           )
 
+#print(Pincodealgo(pincode))
+result = Pincodealgo(pincode)
 rows = cursor.execute(
-    "SELECT name, age, pincode, Covid state, Malayria state, Cholera state FROM corona WHERE Covid state = 'yes' OR Malayria state = 'yes' OR Cholera state = 'yes'",                                                   
+    "SELECT Name, Age, Pincode, 'covid state', 'malayria state', 'cholera state' FROM corona WHERE 'covid state' = 'yes' OR 'malayria state' = 'yes' OR 'cholera state' = 'yes'",                                                   
 ).fetchall()
 
+for i in rows:
+    if i in result:
+        final.append(i)
+if final == []:
+    print("\nNo cases in your region. Yay!")
+else:
+    print(*final)   
+connection.commit()

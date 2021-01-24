@@ -3,6 +3,98 @@ from sqlite3 import *
 connection = connect("coronavirus")
 cursor = connection.cursor()
 
+def Pincodealgo(pin):
+    pin = int(pin)
+    region = pin //1000
+    if region == 11:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+    elif region == 12 and region ==13:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+    elif region >13 and region <17:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+    elif region == 17:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+    elif region == 18 and region == 19:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+    elif region >19 and region <29:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+    elif region >29 and region <35:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+    
+    elif region >35 and region <40:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )  
+   
+    elif region >39 and region <45:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+
+    elif region >44 and region <50:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+    
+    elif region >49 and region <54:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+        
+    elif region >55 and region <60:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+
+    elif region >59 and region <65:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+        
+    elif region >66 and region <70:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+
+    elif region >69 and region <75:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+
+    elif region >74 and region <78:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+
+    elif region == 78:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+
+    elif region == 79:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+
+    elif region >79 and region <86:
+        cursor.execute("SELECT name, Pincode FROM corona WHERE pincode//10000 == ?",
+        (region),
+                       )
+
 cont = input('Do you want to edit an existing profile?(1 for yes, 0 for no) ')
 if cont =='1':
     fna = input('What is the first name of the profile? ')
@@ -42,6 +134,9 @@ fname = input('What is your first name? ')
 lname = input('What is your first name? ')
 age = input('What is your age? ')
 pincode = input('What is your pincode? ')
+if len(pincode) != 6:
+    print('Invalid pincode')
+    exit()
 passw = input('what would you like your Password to be? ')
 fullname= fname+lname
 
